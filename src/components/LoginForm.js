@@ -52,6 +52,7 @@ const labelStyle = {
 
 const LoginForm = () => {
     const [checked, setChecked] = useState(false);
+    const [hidePassword, setHidePassword] = useState(true)
     const classes = useStyles();
 
     return (
@@ -75,17 +76,17 @@ const LoginForm = () => {
                     >Password</InputLabel>
                     <FilledInput
                         id="filled-adornment-password"
-                        type="password"
+                        type={hidePassword ? 'password' : 'text'}
                         onChange={() => { }}
                         endAdornment={
                             <InputAdornment position="end">
                                 <IconButton
                                     aria-label="toggle password visibility"
-                                    onClick={() => { }}
+                                    onClick={() => { setHidePassword(!hidePassword)}}
                                     onMouseDown={() => { }}
                                     edge="end"
                                 >
-                                    <Visibility />
+                                  {hidePassword ? <VisibilityOff /> : <Visibility/>}  
                                 </IconButton>
                             </InputAdornment>
                         }
@@ -107,7 +108,7 @@ const LoginForm = () => {
                 />
             </Box>
 
-            <Box m={3} style={{ display: 'flex', justifyContent: 'center' }}>
+            <Box  style={{ display: 'flex', justifyContent: 'center', marginTop:'4.5em' }}>
                 <Button
                     variant="contained"
                     color="secondary"
