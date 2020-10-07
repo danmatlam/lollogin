@@ -15,53 +15,63 @@ import Box from '@material-ui/core/Box'
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Button from '@material-ui/core/Button';
-
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
+const useStyles = makeStyles((theme) => ({
+
+    label: {
+        fontSize: '9pt', fontWeight: 700, justifyContent: 'center', textTransform: 'uppercase',
+    },
+    input: {
+        width: '80vw',
+        maxWidth: '20em'
+    },
+    button: {
+        borderRadius: '18pt',
+        width: '4.5em',
+        height: '4.5em'
+    },
+    arrow: {
+        width: '45px',
+        height: '45px',
+        marginLeft:'6px'
+    }
+
+}));
+
 
 const labelStyle = {
     fontSize: '9pt', fontWeight: 700, justifyContent: 'center', textTransform: 'uppercase'
 }
-const labelCheckbox = {
-    fontSize: '10pt', fontWeight: 500, justifyContent: 'center'
-}
-const inputStyle = {
-    width: '80vw',
-    maxWidth: '20em'
-}
 
-const buttonStyle = {
-    width: '5.1em',
-    height: '5.1em',
-    borderRadius: '1.8em',
-    display: 'flex',
 
-}
-const arrowStyle = {
-    width: '2.1em',
-    height: '2.1em'
-}
 
 const LoginForm = () => {
     const [checked, setChecked] = useState(false);
+    const classes = useStyles();
 
     return (
         <form>
-
-
             <Box m={3}>
-                <TextField style={inputStyle}
-                    label="username"
-                    variant="filled"
-                    InputLabelProps={{ style: labelStyle }} // font size of input label
-                />
+                <FormControl className={classes.input}>
+                    <TextField
+                        label="username"
+                        variant="filled"
+                        InputLabelProps={{ style: labelStyle }} // font size of input label
+                    />
+                </FormControl>
             </Box>
 
             <Box m={3}>
-                <FormControl style={inputStyle}
+                <FormControl className={classes.input}
                     variant="filled">
                     <InputLabel
                         htmlFor="filled-adornment-password"
-                        style={labelStyle}
+                        className={classes.label}
                     >Password</InputLabel>
                     <FilledInput
                         id="filled-adornment-password"
@@ -85,7 +95,6 @@ const LoginForm = () => {
 
             <Box m={3}>
                 <FormControlLabel
-
                     control={
                         <Checkbox
                             checked={checked}
@@ -94,23 +103,20 @@ const LoginForm = () => {
                             inputLabelProps={{ style: labelStyle }}
                         />
                     }
-                    label={<span style={labelCheckbox}>Stay signed in</span>}
+                    label={<span classname={classes.label}>Stay signed in</span>}
                 />
-
-
             </Box>
 
-            <Box m={3} style={{display:'flex', justifyContent:'center'}}>
-            <Button
-                variant="contained"
-                color="secondary"
-                style={buttonStyle}
-                startIcon={<ArrowForwardIcon style={arrowStyle} />}
-            >
+            <Box m={3} style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    startIcon={<ArrowForwardIcon className={classes.arrow} />}
+                >
+                </Button>
+            </Box>
 
-            </Button>
-                </Box>
-   
 
 
         </form>
