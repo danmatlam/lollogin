@@ -40,7 +40,7 @@ const View = styled.div`
     height:100%;
     width: 100vw;
     display:flex;
-        background-color:#000000;
+    background-color:#000000;
 
     @media screen and (max-width: 800px) {
         flex-direction:column-reverse;
@@ -65,16 +65,16 @@ const MainSide = styled.div`
         padding:0;
         z-index:1;
         width:80vw;
-        border-radius:1.2em;
-        margin-top:-6em;
+        border-radius:9pt;
+        margin-top:-12em;
         margin-bottom:6em;
 
     }
-    @media screen and (max-width: 400px) {
-        padding:0;
+    @media screen and (max-width: 600px) {
         width:100vw;
+        margin-top:0;
         margin-bottom:0;
-        margin-bottom:6em;
+        margin-top:-.9em;
 
     }
 `;
@@ -114,8 +114,13 @@ const Background = styled.img`
     width:100%;
     object-fit:cover;
     @media screen and (max-width: 800px) {
-       height:30vh;
+       height:60vh;
     }
+    @media screen and (max-width: 600px) {
+        height:24vh;
+    }
+
+    
 
 `
 
