@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     arrow: {
         width: '45px',
         height: '45px',
-        marginLeft:'6px'
+        marginLeft: '6px'
     }
 
 }));
@@ -82,11 +82,11 @@ const LoginForm = () => {
                             <InputAdornment position="end">
                                 <IconButton
                                     aria-label="toggle password visibility"
-                                    onClick={() => { setHidePassword(!hidePassword)}}
+                                    onClick={() => { setHidePassword(!hidePassword) }}
                                     onMouseDown={() => { }}
                                     edge="end"
                                 >
-                                  {hidePassword ? <VisibilityOff /> : <Visibility/>}  
+                                    {hidePassword ? <VisibilityOff /> : <Visibility />}
                                 </IconButton>
                             </InputAdornment>
                         }
@@ -108,7 +108,7 @@ const LoginForm = () => {
                 />
             </Box>
 
-            <Box  style={{ display: 'flex', justifyContent: 'center', marginTop:'4.5em' }}>
+            <Box style={{ display: 'flex', justifyContent: 'center', marginTop: '4.5em' }}>
                 <Button
                     variant="contained"
                     color="secondary"
